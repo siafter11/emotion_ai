@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emotion AI</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+<h1>Emotion AI</h1>
+<video id="video" autoplay muted playsinline></video>
+<div class="panel">
+<h2 id="emotion">로딩 중...</h2>
+<p id="confidence"></p>
+<p id="metrics"></p>
+<div id="reason"></div>
+</div>
+<canvas id="chart"></canvas>
+</body>
+</html>
