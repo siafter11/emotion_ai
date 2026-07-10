@@ -1,5 +1,5 @@
 
-const video=document.getElementById('video');
+const video=document.getElementById('video');//html에서 자료 가져오기
 const emotionEl=document.getElementById('emotion');
 const confidenceEl=document.getElementById('confidence');
 const metricsEl=document.getElementById('metrics');
