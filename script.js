@@ -40,7 +40,7 @@ async function detect(){
  ).withFaceLandmarks().withFaceExpressions();
 
  if(!d){
-   emotionEl.textContent='얼굴 없음';
+   emotionEl.textContent='얼굴 미인식';
    return;
  }
 
