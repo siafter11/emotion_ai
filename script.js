@@ -30,25 +30,25 @@ function topEmotion(expressions){
  let best='neutral',max=0;
  for(const k in expressions){
    if(expressions[k]>max){max=expressions[k];best=k;}
- }
+ }//가장 확률이 높은 감정 저장
  return {best,max};
-}
+}//가장 높은 감정과 확률 반환
 
 async function detect(){
  const d=await faceapi.detectSingleFace(
    video,new faceapi.TinyFaceDetectorOptions()
  ).withFaceLandmarks().withFaceExpressions();
-
+//얼굴 미인식 시 종료
  if(!d){
    emotionEl.textContent='얼굴 미인식';
    return;
  }
 
- const {best,max}=topEmotion(d.expressions);
+ const {best,max}=topEmotion(d.expressions);//가장 높은 간정 선택
 
- const mouth=d.landmarks.getMouth();
- const left=mouth[0];
- const right=mouth[6];
+ const mouth=d.landmarks.getMouth();//입 좌표
+ const left=mouth[0];//왼쪽 입꼬리
+ const right=mouth[6];//오른쪽 입꼬리
 
  const angle=Math.atan2(
   right.y-left.y,
