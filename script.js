@@ -1,7 +1,7 @@
-
-const video=document.getElementById('video');//html에서 자료 가져오기
-const emotionEl=document.getElementById('emotion');
-const confidenceEl=document.getElementById('confidence');
+//html에서 자료 가져오기
+const video=document.getElementById('video');//카메라 영상
+const emotionEl=document.getElementById('emotion');//감정결과 출력
+const confidenceEl=document.getElementById('confidence');//신뢰도 출력
 const metricsEl=document.getElementById('metrics');
 const reasonEl=document.getElementById('reason');
 
