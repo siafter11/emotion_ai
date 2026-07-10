@@ -2,16 +2,16 @@
 const video=document.getElementById('video');//카메라 영상
 const emotionEl=document.getElementById('emotion');//감정결과 출력
 const confidenceEl=document.getElementById('confidence');//신뢰도 출력
-const metricsEl=document.getElementById('metrics');
-const reasonEl=document.getElementById('reason');
+const metricsEl=document.getElementById('metrics');//인식한 얼굴
+const reasonEl=document.getElementById('reason');//감정 판단의 근거
 
-const labels=[];
-const values=[];
+const labels=[];//x축 시간
+const values=[];//y축 신뢰도
 
 const chart=new Chart(document.getElementById('chart'),{
  type:'line',
  data:{labels,datasets:[{label:'Confidence %',data:values}]}
-});
+});//선 그래프 생성
 
 async function setup(){
  const stream=await navigator.mediaDevices.getUserMedia({video:true});
