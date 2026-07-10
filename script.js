@@ -14,17 +14,17 @@ const chart=new Chart(document.getElementById('chart'),{
 });//선 그래프 생성
 
 async function setup(){
- const stream=await navigator.mediaDevices.getUserMedia({video:true});
- video.srcObject=stream;
+ const stream=await navigator.mediaDevices.getUserMedia({video:true});//카메라 권한 요청
+ video.srcObject=stream;//카메라 연결
 
  await Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
   faceapi.nets.faceExpressionNet.loadFromUri('./models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('./models')
- ]);
+ ]);//얼굴인식모델,표정인식모델,얼굴좌표지정모델 불러오기
 
  setInterval(detect,1000);
-}
+}//1초마다 detect실행
 
 function topEmotion(expressions){
  let best='neutral',max=0;
